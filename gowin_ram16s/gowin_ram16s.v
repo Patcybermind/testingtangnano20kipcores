@@ -23,10 +23,10 @@ RAM16S4 ram16s_inst_0 ( //lower bits
     .CLK(clk)
 );
 
-defparam ram16s_inst_0.INIT_0 = 16'h1234;
-defparam ram16s_inst_0.INIT_1 = 16'h0000;
-defparam ram16s_inst_0.INIT_2 = 16'h0000;
-defparam ram16s_inst_0.INIT_3 = 16'h0000;
+defparam ram16s_inst_0.INIT_0 = 16'b0101_0101_0000_0000; // lower bits
+defparam ram16s_inst_0.INIT_1 = 16'b0011_0011_0000_0000;
+defparam ram16s_inst_0.INIT_2 = 16'b0000_1111_0000_0000;
+defparam ram16s_inst_0.INIT_3 = 16'b0000_0000_1000_0000; // adress 0 is on the right and it goes down
 
 RAM16S4 ram16s_inst_1 (
     .DO(dout[7:4]),
@@ -36,9 +36,9 @@ RAM16S4 ram16s_inst_1 (
     .CLK(clk)
 );
 
-defparam ram16s_inst_1.INIT_0 = 16'h0000; // upper bits
-defparam ram16s_inst_1.INIT_1 = 16'h0000;
-defparam ram16s_inst_1.INIT_2 = 16'h0000;
-defparam ram16s_inst_1.INIT_3 = 16'h0000;
+defparam ram16s_inst_1.INIT_0 = 16'b0000_0000_0000_0000; // upper bits
+defparam ram16s_inst_1.INIT_1 = 16'b0000_0000_0000_0000;
+defparam ram16s_inst_1.INIT_2 = 16'b0000_0000_0000_0000;
+defparam ram16s_inst_1.INIT_3 = 16'b0000_0000_0000_0001;
 
 endmodule //Gowin_RAM16S

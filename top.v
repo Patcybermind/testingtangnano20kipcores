@@ -61,6 +61,7 @@ reg [31:0] txIntervalCounter = 0;
 always @(posedge clk) begin
     if (txIntervalCounter == UART_INTERVAL_SEND) begin
         address <= receivedData;
+        txIntervalCounter <= txIntervalCounter + 1;
         
     end else if (txIntervalCounter == UART_INTERVAL_SEND + 1) begin
         txIntervalCounter <= 0;
